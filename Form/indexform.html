@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agro-Aid Forum</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      body {
+        background: url("./wheat.jpg") no-repeat center center fixed;
+        background-size: cover;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      /* Navbar styles from main page */
+      header {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+        padding: 10px 0;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index: 1000;
+      }
+
+      .dropbtn {
+        background-color: #4caf50;
+        margin-left: 10px;
+        color: white;
+        padding: 8px 14px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+
+      .dropbtn:hover {
+        background-color: #217526;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #9edaa0;
+        color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Forum-specific styles */
+      .forum-container {
+        max-width: 900px;
+        margin: 0 auto 50px;
+        padding: 25px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .forum-title {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        color: #4caf50;
+        margin-bottom: 30px;
+      }
+      .form-label {
+        font-weight: 600;
+      }
+      .forum-form input,
+      .forum-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      .forum-form button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .forum-form button:hover {
+        background-color: #388e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar from main page -->
+    <header>
+      <div class="container">
+        <nav class="py-2 d-lg-flex align-items-center">
+          <div id="logo" class="mr-auto">
+            <h1 style="margin-left: -100px">
+              <a href="../index.html">
+                <span
+                  class="fa fa-tree"
+                  style="font-size: 30px; color: green"
+                ></span>
+                <span
+                  style="
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: #34fc34;
+                    text-shadow: 0 0 20px #000000;
+                  "
+                >
+                  Agro-Aid
+                </span>
+              </a>
+            </h1>
+          </div>
+
+          <div
+            class="dropdown"
+            style="display: inline-block; margin-right: 10px"
+          >
+            <button class="dropbtn">
+              Menu <span class="fa fa-bars"></span>
+            </button>
+            <div class="dropdown-content">
+              <a href="../pages/crop_recommendation.html">
+                <span class="fa fa-seedling"></span> Crop Recommendation
+              </a>
+              <a href="../pages/soil_fertility_analysis.html">
+                <span class="fa fa-microscope"></span> Soil Fertility Analysis
+              </a>
+              <a href="../pages/stress_levels.html">
+                <span class="fa fa-sun"></span> Crop Health Assessment
+              </a>
+              <a href="../pages/yield_prediction.html">
+                <span class="fa fa-tractor"></span> Yield Prediction
+              </a>
+            </div>
+          </div>
+
+          <a href="../Weather-Dashboard/indexweather.html">
+            <button class="dropbtn">
+              Dashboard <span class="fa fa-cloud-sun"></span>
+            </button>
+          </a>
+
+          <a href="../Form/indexform.html">
+            <button class="dropbtn">
+              Ask Us <span class="fa fa-comments"></span>
+            </button>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="forum-container">
+      <div class="forum-title">
+        <i class="fa fa-comments"></i> Agro-Aid Forum
+      </div>
+
+      <!-- Forum Form -->
+      <form class="forum-form" id="forumForm">
+        <label class="form-label" for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label class="form-label" for="topic">Topic</label>
+        <input type="text" id="topic" name="topic" required />
+
+        <label class="form-label" for="question">Your Question</label>
+        <textarea id="question" name="question" rows="5" required></textarea>
+
+        <button type="submit">Post Question</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("forumForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const topic = document.getElementById("topic").value.trim();
+          const question = document.getElementById("question").value.trim();
+
+          if (name && topic && question) {
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            users.push({ name, topic, question });
+
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Your question has been submitted!");
+
+            // Clear form
+            document.getElementById("forumForm").reset();
+          } else {
+            alert("Please fill in all fields.");
+          }
+        });
+    </script>
+
+    <footer
+      style="
+        background-color: #212520;
+        color: rgb(235, 255, 237);
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+      "
+    >
+      <p>&copy; 2025 Agro-Aid</p>
+    </footer>
+  </body>
+</html>

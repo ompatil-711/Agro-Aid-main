@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yield Projection - AgroAid</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Yield Projection, Agriculture, Farming, AgroAid, Yield, Crop Yield" />
+
+    <script>
+        addEventListener(
+            "load",
+            function () {
+                setTimeout(hideURLbar, 0);
+            },
+            false
+        );
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- css files -->
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/soil_fertility_analysis.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet" />
+</head>
+<body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <nav class="py-4 d-lg-flex align-items-center">
+          <div id="logo" class="mr-auto">
+            <h1 style="margin-left: -100px;">
+              <a href="../index.html">
+                <span class="fa fa-tree" style="font-size: 30px; color: green"></span>
+                <span style="font-size: 35px; font-weight: bold; color: #90ee90; text-shadow: 0 0 20px #90ee90;">Agro-Aid</span>
+              </a>
+            </h1>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">
+              Menu <span class="fa fa-bars"></span>
+            </button>
+          
+            <!-- Hidden dropdown links go inside .dropdown-content -->
+            <div class="dropdown-content" id="myDropdown">
+              <a href="crop_recommendation.html">
+                <span class="fa fa-seedling"></span> Crop Recommendation
+              </a>
+              <a href="soil_fertility_analysis.html">
+                <span class="fa fa-microscope"></span> Soil Fertility Analysis
+              </a>
+              <a href="stress_levels.html">
+                <span class="fa fa-sun"></span> Crop Health Assessment
+              </a>
+            </div>
+          </div>
+          
+        </nav>
+      </div>
+    </header>
+
+    <!-- banner -->
+    <section class="banner_w3lspvt" id="home">
+      <div class="overlay">
+        <div class="container">
+          <div class="w3layouts-banner-info text-center">
+            <div class="agro-aid" style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+              width: 100%;
+            ">
+              <h3 class="banner-text" style="
+                color: #90ee90;
+                font-size: 50px;
+                font-weight: bold;
+                text-shadow: 0 0 20px #90ee90;
+                margin-bottom: 20px;
+              ">
+                Yield Projection
+              </h3>
+              <p class="mb-4" style="
+                color: white;
+                font-size: 18px;
+                max-width: 800px;
+                margin: 0 auto;
+                letter-spacing: 1px;
+              ">
+                <br>Our yield prediction tool turns your farm data into clear, actionable insights. By entering details about your soil, 
+                crop type, and local conditions, you receive an accurate forecast of your expected yield.<br><br>This information helps you 
+                plan your harvest more efficiently, manage resources wisely, and make informed decisions to boost your overall productivity
+                 and profitability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="w3layouts-banner-info yield-prediction-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="yield-prediction-container shadow-lg">
+              <h3 class="text-center mb-4">Yield Projection</h3>
+              <form id="yieldForm">
+                <!-- Land Area -->
+                <div class="form-group">
+                  <label for="land_area">Land Area (hectares):</label>
+                  <input type="number" class="form-control" id="land_area" name="land_area" required step="0.01" placeholder="e.g. 2.5"/>
+                </div>
+    
+                <!-- Production -->
+                <div class="form-group">
+                  <label for="production">Production (tonnes):</label>
+                  <input type="number" class="form-control" id="production" name="production" required step="0.01" placeholder="e.g. 500"/>
+                </div>
+    
+                <!-- State -->
+                <div class="form-group">
+                  <label for="state">State:</label>
+                  <select class="form-control" id="state" name="state" required>
+                    <option value="">Select State</option>
+                  </select>
+                </div>
+    
+                <!-- District -->
+                <div class="form-group">
+                  <label for="district">District:</label>
+                  <input type="text" class="form-control" id="district" name="district" required placeholder="Enter District"/>
+                </div>
+    
+                <!-- Crop -->
+                <div class="form-group">
+                  <label for="crop">Crop:</label>
+                  <select class="form-control" id="crop" name="crop" required>
+                    <option value="">Select Crop</option>
+                  </select>
+                </div>
+    
+                <!-- Season -->
+                <div class="form-group">
+                  <label for="season">Season:</label>
+                  <select class="form-control" id="season" name="season" required>
+                    <option value="">Select Season</option>
+                    <option>Summer</option>
+                    <option>Kharif</option>
+                    <option>Rabi</option>
+                    <option>Whole Year</option>
+                    <option>Autumn</option>
+                    <option>Winter</option>
+                  </select>
+                </div>
+    
+                <button type="submit" class="btn btn-primary btn-block mt-3">Predict Yield</button>
+              </form>
+              <a href="yield_prediction_diff.html" class="btn btn-info btn-block mt-3">Alternate Yield Projection Model with Different Parameters</a>
+              <div id="result" class="alert alert-success mt-4" style="display:none;">
+                <h4 class="alert-heading">Predicted Yield (tonnes per hectare)</h4>
+                <p id="predictedYield" class="mb-0"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<footer class="footer py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p class="copy-right">&copy; 2025 AgroAid. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  const states = ["GUJARAT", "PUNJAB", "CHHATTISGARH", "MANIPUR", "KARNATAKA", "ASSAM", "BIHAR", "HARYANA", "MADHYA PRADESH", "ODISHA", "TAMIL NADU", "MAHARASHTRA", "NAGALAND", "TRIPURA", "RAJASTHAN", "ANDAMAN & NICOBAR", "ANDHRA PRADESH", "ARUNACHAL PRADESH", "CHANDIGARH", "DADRA AND NAGAR HAVELI", "DAMAN AND DIU", "DELHI", "GOA", "HIMACHAL PRADESH", "JAMMU AND KASHMIR", "JHARKHAND", "KERALA", "MEGHALAYA", "MIZORAM", "PUDUCHERRY", "SIKKIM", "UTTAR PRADESH", "UTTARAKHAND", "WEST BENGAL", "TELANGANA"];
+  const crops = ["Sesamum", "Maize", "Masoor", "Urad", "Mesta", "Bajra", "Barley", "Sannhamp", "Ragi", "Rice", "Gram", "Wheat", "Jowar", "Khesari", "Jute", "Moth", "Arecanut", "Arhar/Tur", "Banana", "Black pepper", "Cashewnut", "Coconut", "Cowpea(Lobia)", "Dry chillies", "Ginger", "Groundnut", "Moong(Green Gram)", "Oilseeds total", "Rapeseed &Mustard", "Sugarcane", "Sweet potato", "Tapioca", "Turmeric", "Castor seed", "Coriander", "Cotton(lint)", "Garlic", "Horse-gram", "Linseed", "Niger seed", "Onion", "Other Rabi pulses", "Other Kharif pulses", "other oilseeds", "Potato", "Safflower", "Small millets", "Soyabean", "Sunflower", "Tobacco", "Peas & beans (Pulses)", "Other Cereals", "Guar seed", "Cardamom", "Other Summer Pulses", "Dry Ginger"];
+
+  const stateSelect = document.getElementById("state");
+  const cropSelect = document.getElementById("crop");
+
+  states.forEach(state => {
+    let option = document.createElement("option");
+    option.value = option.text = state;
+    stateSelect.add(option);
+  });
+
+  crops.forEach(crop => {
+    let option = document.createElement("option");
+    option.value = option.text = crop;
+    cropSelect.add(option);
+  });
+
+  document.getElementById("yieldForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const land_area = parseFloat(document.getElementById("land_area").value);
+    const production = parseFloat(document.getElementById("production").value);
+    const state = document.getElementById("state").value;
+    const district = document.getElementById("district").value;
+    const crop = document.getElementById("crop").value;
+    const season = document.getElementById("season").value;
+
+    fetch("http://localhost:5000/predict-yield", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        land_area,
+        production,
+        state,
+        district,
+        crop,
+        season
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.yield) {
+        document.getElementById("predictedYield").textContent = `Predicted Yield: ${data.yield.toFixed(2)} tonnes/hectare`;
+        document.getElementById("result").style.display = "block";
+      } else if (data.error) {
+        document.getElementById("predictedYield").textContent = `Error: ${data.error}`;
+        document.getElementById("result").style.display = "block";
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("result").textContent = "An error occurred while predicting.";
+    });
+  });
+</script>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 14px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .dropbtn:hover {
+            background-color: #45a049;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #9edaa0;
+		color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+	
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</body>
+</html>

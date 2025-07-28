@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crop Stress Level - AgroAid</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Crop Stress, Stress Level, Farming, AgroAid, Stress, Crop Levels" />
+
+    <script>
+        addEventListener(
+            "load",
+            function () {
+                setTimeout(hideURLbar, 0);
+            },
+            false
+        );
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- css files -->
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/soil_fertility_analysis.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet" />
+</head>
+<body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <nav class="py-4 d-lg-flex align-items-center">
+          <div id="logo" class="mr-auto">
+            <h1 style="margin-left: -100px;">
+              <a href="../index.html">
+                <span class="fa fa-tree" style="font-size: 30px; color: green"></span>
+                <span style="font-size: 35px; font-weight: bold; color: #90ee90; text-shadow: 0 0 20px #90ee90;">Agro-Aid</span>
+              </a>
+            </h1>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">
+              Menu <span class="fa fa-bars"></span>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="crop_recommendation.html">
+                    <span class="fa fa-seedling"></span> Crop Recommendation
+                  </a>
+                  <a href="soil_fertility_analysis.html">
+                    <span class="fa fa-microscope"></span> Soil Fertility Analysis
+                  </a>
+                  <a href="yield_prediction.html">
+                    <span class="fa fa-tractor"></span> Yield Prediction
+                  </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- banner -->
+    <section class="banner_w3lspvt" id="home">
+      <div class="overlay">
+        <div class="container">
+          <div class="w3layouts-banner-info text-center">
+            <div class="agro-aid" style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+              width: 100%;
+            ">
+              <h3 class="banner-text" style="
+                color: #90ee90;
+                font-size: 50px;
+                font-weight: bold;
+                text-shadow: 0 0 20px #90ee90;
+                margin-bottom: 20px;
+              ">
+                Crop Health Assessment
+              </h3>
+              <p class="mb-4" style="
+                color: white;
+                font-size: 18px;
+                max-width: 800px;
+                margin: 0 auto;
+                letter-spacing: 1px;
+              ">This tool helps you quickly check the health of your crops using everyday measurements from your farm. 
+                Simply enter values like soil moisture, temperature, humidity, and nutrient levels, and you'll receive an 
+                easy-to-understand prediction of your plants' stress levels.<br>
+                Use this information to know when your crops might 
+                need extra care, so you can boost their growth and yield.              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="w3layouts-banner-info yield-prediction-section">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <div class="yield-prediction-container shadow-lg">
+                      <h3 class="text-center mb-4">Crop Stress Prediction</h3>
+                        <form id="PlantStressPredictionForm">
+                          <!-- Row 1 -->
+                          <div class="row mb-3">
+                              <!-- Soil Moisture -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="soil_moisture">
+                                          Soil Moisture <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50%)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="soil_moisture" placeholder="Enter Soil Moisture (%)" step="any" required>
+                                  </div>
+                              </div>
+                              <!-- Ambient Temperature -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="ambient_temperature">
+                                          Ambient Temperature <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50 °C)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="ambient_temperature" placeholder="Enter Ambient Temperature (°C)" step="any" required>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Row 2 -->
+                          <div class="row mb-3">
+                              <!-- Soil Temperature -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="soil_temperature">
+                                          Soil Temperature <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50 °C)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="soil_temperature" placeholder="Enter Soil Temperature (°C)" step="any" required>
+                                  </div>
+                              </div>
+                              <!-- Humidity -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="humidity">
+                                          Humidity <span style="font-size: 14px; font-weight: bold; color: #333;">(0-100%)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="humidity" placeholder="Enter Humidity (%)" step="any" required>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Row 3 -->
+                          <div class="row mb-3">
+                              <!-- Light Intensity -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="light_intensity">
+                                          Light Intensity <span style="font-size: 14px; font-weight: bold; color: #333;">(0-1000 lux)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="light_intensity" placeholder="Enter Light Intensity (lux)" step="any" required>
+                                  </div>
+                              </div>
+                              <!-- Soil pH -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="soil_ph">
+                                          Soil pH <span style="font-size: 14px; font-weight: bold; color: #333;">(0-10)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="soil_ph" placeholder="Enter Soil pH" step="any" required>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Row 4 -->
+                          <div class="row mb-3">
+                              <!-- Nitrogen Level -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="nitrogen_level">
+                                          Nitrogen Level <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50 mg/kg)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="nitrogen_level" placeholder="Enter Nitrogen Level (mg/kg)" step="any" required>
+                                  </div>
+                              </div>
+                              <!-- Phosphorus Level -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="phosphorus_level">
+                                          Phosphorus Level <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50 mg/kg)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="phosphorus_level" placeholder="Enter Phosphorus Level (mg/kg)" step="any" required>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Row 5 -->
+                          <div class="row mb-3">
+                              <!-- Potassium Level -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="potassium_level">
+                                          Potassium Level <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50 mg/kg)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="potassium_level" placeholder="Enter Potassium Level (mg/kg)" step="any" required>
+                                  </div>
+                              </div>
+                              <!-- Chlorophyll Content -->
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="chlorophyll_content">
+                                          Chlorophyll Content <span style="font-size: 14px; font-weight: bold; color: #333;">(0-50 SPAD)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="chlorophyll_content" placeholder="Enter Chlorophyll Content (SPAD)" step="any" required>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Row 6 (Single Item) -->
+                          <div class="row mb-3">
+                              <div class="col-12">
+                                  <div class="form-group">
+                                      <label for="electrochemical_signal">
+                                          Electrochemical Signal <span style="font-size: 14px; font-weight: bold; color: #333;">(0-5 mV)</span>
+                                      </label>
+                                      <input type="number" class="form-control" id="electrochemical_signal" placeholder="Enter Electrochemical Signal (mV)" step="any" required>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Predict Button -->
+                          <button type="button" class="btn btn-primary btn-block mt-3" style="margin-bottom: 20px;" onclick="predictPlantStress()">Predict Stress Level</button>
+                        </form>
+                      <div id="predictionResult" class="mt-4" style="display: none;">
+                          <div class="alert alert-success" role="alert">
+                              <h4 class="alert-heading">Predicted Plant Stress Level</h4>
+                              <hr>
+                              <p id="predictedStress" class="mb-0"></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="copy-right">&copy; 2025 AgroAid. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="..\js/plant_stress_rf_model.js"></script>
+    <script>
+        function predictPlantStress() {
+            // Retrieve values from input fields
+            var soil_moisture = parseFloat(document.getElementById('soil_moisture').value);
+            var ambient_temperature = parseFloat(document.getElementById('ambient_temperature').value);
+            var soil_temperature = parseFloat(document.getElementById('soil_temperature').value);
+            var humidity = parseFloat(document.getElementById('humidity').value);
+            var light_intensity = parseFloat(document.getElementById('light_intensity').value);
+            var soil_ph = parseFloat(document.getElementById('soil_ph').value);
+            var nitrogen_level = parseFloat(document.getElementById('nitrogen_level').value);
+            var phosphorus_level = parseFloat(document.getElementById('phosphorus_level').value);
+            var potassium_level = parseFloat(document.getElementById('potassium_level').value);
+            var chlorophyll_content = parseFloat(document.getElementById('chlorophyll_content').value);
+            var electrochemical_signal = parseFloat(document.getElementById('electrochemical_signal').value);
+            
+            // Arrange the inputs in the order expected by the model
+            var input_features = [
+                soil_moisture,
+                ambient_temperature,
+                soil_temperature,
+                humidity,
+                light_intensity,
+                soil_ph,
+                nitrogen_level,
+                phosphorus_level,
+                potassium_level,
+                chlorophyll_content,
+                electrochemical_signal
+            ];
+            
+            // Get the prediction scores
+            var scores = score(input_features);
+            
+            // Determine the index of the highest score
+            var maxIndex = scores.indexOf(Math.max(...scores));
+            
+            // Map indices to corresponding class labels
+            var labels = ["Healthy", "High Stress", "Moderate Stress"];
+            var predictedLabel = labels[maxIndex] || "Unknown";
+            
+            // Display the prediction
+            document.getElementById('predictedStress').innerText = "Predicted Plant Stress Level: " + predictedLabel;
+            document.getElementById('predictionResult').style.display = 'block';
+        }
+      </script>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("myDropdown");
+            dropdownContent.classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 14px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .dropbtn:hover {
+            background-color: #45a049;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #9edaa0;
+		color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+	
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</body>
+</html>

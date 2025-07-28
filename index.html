@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Agro-Aid Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta
+      name="keywords"
+      content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+    />
+    <div id="google_translate_element"></div>
+
+    <script src="script2.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <script>
+      addEventListener(
+        "load",
+        function () {
+          setTimeout(hideURLbar, 0);
+        },
+        false
+      );
+
+      function hideURLbar() {
+        window.scrollTo(0, 1);
+      }
+    </script>
+
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <link
+      href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+      rel="stylesheet"
+    />
+
+    <style>
+      .parallax {
+        position: relative;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .core-value {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .blog {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index: 1000;
+      }
+
+      .dropbtn {
+        background-color: #4caf50;
+        margin-left: 10px;
+        color: white;
+        padding: 8px 14px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+
+      .dropbtn:hover {
+        background-color: #217526;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #9edaa0;
+        color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="py-4 d-lg-flex align-items-center">
+          <div id="logo" class="mr-auto">
+            <h1 style="margin-left: -100px">
+              <a href="index.html">
+                <span
+                  class="fa fa-tree"
+                  style="font-size: 30px; color: green"
+                ></span>
+                <span
+                  style="
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: #90ee90;
+                    text-shadow: 0 0 20px #90ee90;
+                  "
+                >
+                  Agro-Aid
+                </span>
+              </a>
+            </h1>
+          </div>
+
+          <div
+            class="dropdown"
+            style="display: inline-block; margin-right: 10px"
+          >
+            <button class="dropbtn">
+              Menu <span class="fa fa-bars"></span>
+            </button>
+            <div class="dropdown-content">
+              <a href="pages/crop_recommendation.html">
+                <span class="fa fa-seedling"></span> Crop Recommendation
+              </a>
+              <a href="pages/soil_fertility_analysis.html">
+                <span class="fa fa-microscope"></span> Soil Fertility Analysis
+              </a>
+              <a href="pages/stress_levels.html">
+                <span class="fa fa-sun"></span> Crop Health Assessment
+              </a>
+              <a href="pages/yield_prediction.html">
+                <span class="fa fa-tractor"></span> Yield Prediction
+              </a>
+            </div>
+          </div>
+
+          <!-- Dashboard Button -->
+          <a href="Weather-Dashboard/indexweather.html">
+            <button class="dropbtn">
+              Dashboard <span class="fa fa-cloud-sun"></span>
+            </button>
+          </a>
+
+
+          <!-- Forum Button -->
+          <a href="./Form/indexform.html">
+            <button class="dropbtn">
+              Ask Us <span class="fa fa-comments"></span>
+            </button>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- //header -->
+
+    <!-- banner -->
+    <section class="banner_w3lspvt" id="home">
+      <div class="csslider infinity" id="slider1">
+        <div class="banner-top">
+          <div class="overlay">
+            <div class="container">
+              <div class="w3layouts-banner-info text-center">
+                <div
+                  class="agro-aid"
+                  style="
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                  "
+                >
+                  <h3
+                    style="
+                      font-size: 100px;
+                      font-weight: bold;
+                      color: #90ee90;
+                      animation: glow 2s ease-in-out infinite alternate;
+                    "
+                  >
+                    Agro-Aid
+                  </h3>
+                </div>
+                <style>
+                  @keyframes glow {
+                    from {
+                      text-shadow: 0 0 10px #90ee90;
+                    }
+                    to {
+                      text-shadow: 0 0 20px #90ee90;
+                    }
+                  }
+                </style>
+                <div
+                  class="tagline"
+                  style="
+                    position: absolute;
+                    top: 60%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                  "
+                >
+                  <h4
+                    style="
+                      font-size: 30px;
+                      font-weight: bold;
+                      color: #f3e70e;
+                      animation: move 2s ease-in-out infinite alternate;
+                    "
+                  >
+                    smart farming for a better tomorrow
+                  </h4>
+                </div>
+                <style>
+                  @keyframes move {
+                    from {
+                      transform: translateX(-10px);
+                    }
+                    to {
+                      transform: translateX(10px);
+                    }
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section
+      class="core-value py-5 parallax"
+      style="
+        background-image: url(./images/Discover.jpg);
+        height: auto;
+        background-color: rgb(45, 45, 45);
+        background-size: cover;
+        backdrop-filter: blur(5px);
+      "
+    >
+      <style>
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      </style>
+      <div class="container py-md-4">
+        <h1
+          class="heading mb-sm-5 mb-4 text-center"
+          style="
+            font-family: 'Roboto Slab', serif;
+            font-size: 50px;
+            font-weight: bold;
+            color: #02000e;
+          "
+        >
+          Discover Us
+        </h1>
+
+        <div class="row core-grids">
+          <div class="col-lg-6 core-left">
+            <img
+              src="images/India_Farming.jpg"
+              class="img-fliud rounded-pill"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-6 core-right">
+            <h4 class="p-3 mb-2 bg-secondary text-white rounded">
+              Unlock the full potential of your farm with our cutting-edge crop
+              prediction, yield prediction, and soil analysis tools.
+            </h4>
+
+            <p class="p-3 mb-2 bg-success text-white rounded">
+              We use Crop Prediction and Yield Production using Machine Learning
+              to help you guide through the entire farming process. Make
+              informed decisions to understand the demographics of your area,
+              understand the factors that affect your crop and keep them healthy
+              for a super awesome successful yield.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="blog py-5"
+      style="background-image: url(./images/img02.avif)"
+    >
+      <div class="container py-md-5">
+        <h1
+          class="heading mb-sm-5 mb-4 text-center"
+          style="
+            font-family: 'Roboto Slab', serif;
+            font-size: 50px;
+            font-weight: bold;
+            color: #02000e;
+          "
+        >
+          Our Services
+        </h1>
+        <div class="row blog-grids">
+          <div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+            <img src="images/2.jpg" class="img-fliud" alt="" />
+            <div class="blog-info">
+              <h4 style="font-weight: bolder; font-size: 1.2em; color: #000000">
+                Crop Recommendation
+              </h4>
+              <p class="mt-2">
+                Recommendation about the type of crops to be cultivated which is
+                best suited for the respective conditions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5"
+          >
+            <img src="images/s2.jpg" class="img-fliud" alt="" />
+            <div class="blog-info">
+              <h4>Yield Prediction</h4>
+              <p class="mt-2">
+                Predicting the yield of the crops in the market according to the
+                current trends to increase profit.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5"
+          >
+            <img src="images/img01.jpg" class="img-fliud" alt="" />
+            <div class="blog-info">
+              <h4>Crop Health Assessment</h4>
+              <p class="mt-2">
+                Helps assess the health and stress levels of crops using some input parameters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-5">
+      <div class="container py-md-3">
+        <h2 class="logo2 text-center">
+          <a href="index.html">
+            <span class="fa fa-tree" style="color: green"></span> Agro-Aid
+          </a>
+        </h2>
+        <div style="text-align: center; margin-top: 20px">
+          <a href="./Form/indexform.html">
+            <button class="dropbtn">
+              Let Us Know <span class="fa fa-comment"></span>
+            </button>
+          </a>
+        </div>
+
+        <div class="contact-left-footer mt-4">
+          <p class="homelogo">
+            <a href="index.html">Home</a>&nbsp;&nbsp;
+            <a href="pages/crop_recommendation.html">Crop Recommendation</a
+            >&nbsp;&nbsp;
+            <a href="pages/yield_prediction.html">Yield Prediction</a>&nbsp;&nbsp;
+            <a href="pages/stress_levels.html">Crop Health Assessment</a
+            >&nbsp;&nbsp;
+            <a href="Weather-Dashboard/indexweather.html">Weather Dashboard</a>&nbsp;&nbsp;
+            <a href="Form/form.html">Queries</a>
+
+          </p>
+        </div>
+        <div class="w3l-copy text-center">
+          <p class="text-da">Smart Farming for a Better Tomorrow<br /></p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="move-top text-center"></a>
+    <button onclick="togglePopup()" class="chatbot-button">
+      Chat with AgroAid
+    </button>
+
+    <div id="welcomePopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p>Welcome to Agro-Aid! How can we assist you today?</p>
+      </div>
+    </div>
+
+    <button onclick="togglePopup()" class="chatbot-button">
+      Chat with AgroAid
+    </button>
+
+    <div class="popup" id="chatPopup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="togglePopup()">&times;</span>
+        <p style="text-align: center; font-weight: bold">Agro-Aid Chatbot🌿</p>
+        <iframe
+          src="AgroAid_Chatbot/INDEX11.html"
+          width="100%"
+          height="400px"
+          style="border: none"
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="script2.js"></script>
+
+    <script>
+      document.addEventListener("scroll", function () {
+        let scrolled = window.scrollY;
+        let parallaxElements = document.querySelectorAll(".parallax");
+
+        parallaxElements.forEach(function (element) {
+          let speed = 0.5;
+          element.style.backgroundPositionY = -(scrolled * speed) + "px";
+        });
+      });
+    </script>
+  </body>
+</html>
